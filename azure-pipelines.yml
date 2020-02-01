@@ -19,6 +19,12 @@ steps:
     Contents: '**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)/deployment'
     cleanTargetFolder: true
+- task: CopyFiles@2
+  displayName: 'Copying Deploy files over'
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)'
+    Contents: 'deploy.json'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
