@@ -16,8 +16,9 @@ steps:
   displayName: 'Copying files to staging folder'
   inputs:
     SourceFolder: '$(Build.SourcesDirectory)/htmlfolder'
-    Contents: '**\*'
+    Contents: '**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)/deployment'
+    cleanTargetFolder: true
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
