@@ -13,6 +13,7 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 - task: CopyFiles@2
+  displayName: 'Copying files to staging folder'
   inputs:
     SourceFolder: 'htmlfolder/'
     Contents: '**\*'
